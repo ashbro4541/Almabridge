@@ -156,8 +156,8 @@ const Moreinfo = () => {
                     <div className="col-md-8">
                         <div className="card p-3 mb-3">
                             <h5 className="fw-bold text-secondary">📌 Personal Information</h5>
-                            <p><strong>Email:</strong> {email}</p>
-                            <p><strong>Mobile:</strong> {mobile}</p>
+                            <p><strong>Email:</strong> Not Available</p>
+                            <p><strong>Mobile:</strong>Not Available</p>
                         </div>
 
                         {/* Projects */}

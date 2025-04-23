@@ -16,32 +16,43 @@ import ContactForm from './components/ContactForm';
 import Login from './aute/Login';
 import Signup from './aute/Sineup';
 
-import { AuthProvider } from './aute/AuthContext';
+import { AuthProvider, useAuth } from './aute/AuthContext';
 import PrivateRoute from './components/PrivateRoute';
+
+const AppRoutes = () => {
+  const { isLoggedIn } = useAuth();
+
+  return (
+    <>
+      {isLoggedIn && <Navbar />}
+      <Routes>
+        {/* Public Routes */}
+        <Route path="/" element={<Navigate to="/login" />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+
+        {/* Protected Routes */}
+        <Route path="/home" element={<PrivateRoute><HomePage /></PrivateRoute>} />
+        <Route path="/form" element={<PrivateRoute><Form /></PrivateRoute>} />
+        <Route path="/Allprofile" element={<PrivateRoute><Allprofile /></PrivateRoute>} />
+        <Route path="/ContactForm/:id" element={<PrivateRoute><ContactForm /></PrivateRoute>} />
+        <Route path="/Moreinfo/:id" element={<PrivateRoute><Moreinfo /></PrivateRoute>} />
+        <Route path="/AddtoFev" element={<PrivateRoute><AddtoFev /></PrivateRoute>} />
+        <Route path="/about" element={<PrivateRoute><Aboutus /></PrivateRoute>} />
+        <Route path="/Passout" element={<PrivateRoute><Passout /></PrivateRoute>} />
+
+        {/* Catch-all route */}
+        <Route path="*" element={<Navigate to="/login" />} />
+      </Routes>
+    </>
+  );
+};
 
 const App = () => {
   return (
     <AuthProvider>
       <Router>
-        <Navbar />
-        <Routes>
-          {/* Public Routes */}
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-
-          {/* Protected Routes */}
-          <Route path="/" element={<PrivateRoute><HomePage /></PrivateRoute>} />
-          <Route path="/form" element={<PrivateRoute><Form /></PrivateRoute>} />
-          <Route path="/Allprofile" element={<PrivateRoute><Allprofile /></PrivateRoute>} />
-          <Route path="/ContactForm/:id" element={<PrivateRoute><ContactForm /></PrivateRoute>} />
-          <Route path="/Moreinfo/:id" element={<PrivateRoute><Moreinfo /></PrivateRoute>} />
-          <Route path="/AddtoFev" element={<PrivateRoute><AddtoFev /></PrivateRoute>} />
-          <Route path="/about" element={<PrivateRoute><Aboutus /></PrivateRoute>} />
-          <Route path="/Passout" element={<PrivateRoute><Passout /></PrivateRoute>} />
-
-          {/* Redirect all unmatched routes */}
-          <Route path="*" element={<Navigate to="/" />} />
-        </Routes>
+        <AppRoutes />
       </Router>
     </AuthProvider>
   );

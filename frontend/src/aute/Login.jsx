@@ -30,10 +30,13 @@ const { login } = useAuth(); // Add this line
 
       if (response.data.success) {
         localStorage.setItem('isLoggedIn', 'true'); // Set login status
-        setMsg('Login successful!');
-      
-         
-          navigate('/Allprofile');
+       
+          login(); // Call the login function from context
+          setMsg('Login successful!');
+          navigate('/home');
+
+        
+        
         
       } else {
         setMsg(response.data.message || 'Login failed. Invalid credentials.');

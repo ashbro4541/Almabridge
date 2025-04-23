@@ -52,8 +52,8 @@ const ContactForm = () => {
 
         try {
             await axios.post("http://localhost:3000/submitpayment", payload);
-            alert("Payment info submitted successfully!");
-            navigate("/All");
+            alert(" ✅ Thank you! The person you want to reach will contact you within 24 hours.");
+            navigate("/home "); // Redirect to home page after submission
         } catch (err) {
             alert("Error submitting payment info.");
             console.error(err);

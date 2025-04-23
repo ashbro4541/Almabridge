@@ -8,7 +8,7 @@ const Navbar = () => {
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow">
             <div className="container">
                 {/* Brand Logo and Name */}
-                <NavLink className="navbar-brand d-flex align-items-center" to="/">
+                <NavLink className="navbar-brand d-flex align-items-center" to="/home">
                     <img 
                         src="/navlogo.jpg" // Update with your actual logo path
                         alt="IMF Logo" 
@@ -27,7 +27,7 @@ const Navbar = () => {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav ms-auto">
                         <li className="nav-item">
-                            <NavLink className="nav-link" to="/">
+                            <NavLink className="nav-link" to="/home">
                                 Home
                             </NavLink>
                         </li>
