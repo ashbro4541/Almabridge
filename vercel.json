@@ -22,12 +22,5 @@
       "src": "/(.*)",
       "dest": "/frontend/$1"
     }
-  ],
-  "env": {
-    "DB_HOST": "@db_host",
-    "DB_USER": "@db_user", 
-    "DB_PASSWORD": "@db_password",
-    "DB_NAME": "@db_name",
-    "FRONTEND_URL": "@frontend_url"
-  }
+  ]
 }
