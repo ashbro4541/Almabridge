@@ -20,7 +20,7 @@ const path = require('path');
 app.use(fileUpload());
 
 app.use(cors({
-    origin: [""],
+    origin: process.env.FRONTEND_URL || ["http://localhost:5173"],
     methods: ["POST", "GET"], 
     credentials: true
 }));
@@ -312,7 +312,7 @@ app.post("/submitpayment", async (req, res) => {
       service: "gmail",
       auth: {
         user: "ashshinde4541@gmail.com",
-        pass: "gnmk jmsz wbyq jpoj"
+        pass: "pvut pexe xlvg ikro"
       }
     });
 

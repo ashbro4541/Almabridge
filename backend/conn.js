@@ -1,14 +1,13 @@
 var mysql=require('mysql2')
-
 var util=require('util')
 
+// Use environment variables for production
 const conn=mysql.createConnection({
-
-    host:'localhost',
-    user:'root',
-    database:'collage_project',
-    password:'',
-    port:3306
+    host: process.env.DB_HOST || 'localhost',
+    user: process.env.DB_USER || 'root',
+    database: process.env.DB_NAME || 'collage_project',
+    password: process.env.DB_PASSWORD || '',
+    port: process.env.DB_PORT || 3306
 })
 
 conn.connect((err)=>{

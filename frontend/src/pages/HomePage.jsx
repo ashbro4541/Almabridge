@@ -74,7 +74,7 @@ const HomePage = () => {
               <div className="card-body text-center">
                 <h3>Favorites</h3>
                 <p>Save profiles for quick access.</p>
-                <Link to="/favorites" className="btn btn-primary w-100">Go to Favorites</Link>
+                <Link to="/AddtoFev" className="btn btn-primary w-100">Go to Favorites</Link>
               </div>
             </div>
           </div>
