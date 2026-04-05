@@ -13,6 +13,21 @@
       }
     }
   ],
+  "experimentalServices": {
+    "frontend": {
+      "entrypoint": "frontend",
+      "routePrefix": "/",
+      "framework": "vite",
+      "buildCommand": "npm run build",
+      "outputDirectory": "dist"
+    },
+    "backend": {
+      "entrypoint": "backend",
+      "routePrefix": "/_/backend",
+      "buildCommand": "npm install",
+      "outputDirectory": "."
+    }
+  },
   "routes": [
     {
       "src": "/api/(.*)",
